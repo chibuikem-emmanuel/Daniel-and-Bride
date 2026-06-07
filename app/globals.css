@@ -1,0 +1,44 @@
+@import "tailwindcss";
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #111111;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.section-padding {
+  padding-top: 7rem;
+  padding-bottom: 7rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .section-padding {
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .section-padding {
+    padding-left: 6rem;
+    padding-right: 6rem;
+  }
+}
+
+.gold-text {
+  color: #D4A537;
+}
+
+.gold-bg {
+  background: #D4A537;
+}
+
+.gold-border {
+  border-color: #D4A537;
+}
