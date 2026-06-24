@@ -27,7 +27,6 @@ export default function GiftRegistry() {
       id="registry"
       className="py-24 bg-[#0E1719] px-6 relative overflow-hidden border-b border-[#8DD2DB]/10"
     >
-      {/* Background Glow */}
       <motion.div
         animate={{
           scale: [1, 1.12, 1],
@@ -42,7 +41,6 @@ export default function GiftRegistry() {
       />
 
       <div className="max-w-3xl mx-auto relative z-10">
-        {/* Header */}
         <motion.div
           animate={{ y: [0, -4, 0] }}
           transition={{
@@ -66,7 +64,6 @@ export default function GiftRegistry() {
           </p>
         </motion.div>
 
-        {/* Registry Card */}
         <motion.div
           initial={{ opacity: 0, y: 25 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -79,7 +76,6 @@ export default function GiftRegistry() {
           }}
           className="bg-[#44B6C5]/5 border border-[#8DD2DB]/20 p-8 md:p-10 rounded-3xl backdrop-blur-md max-w-xl mx-auto text-center space-y-6 relative overflow-hidden"
         >
-          {/* Animated Glow Overlay */}
           <motion.div
             animate={{
               opacity: [0.2, 0.5, 0.2],
@@ -119,6 +115,7 @@ export default function GiftRegistry() {
               </p>
 
               <button
+                type="button"
                 onClick={handleCopy}
                 className="inline-flex items-center gap-3 bg-[#0E1719] border border-[#8DD2DB]/20 hover:border-[#FFCC47]/50 px-5 py-3 rounded-xl transition-all duration-300"
               >
