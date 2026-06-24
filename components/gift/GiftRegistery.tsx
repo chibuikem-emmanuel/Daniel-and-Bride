@@ -48,21 +48,30 @@ export default function GiftRegistry() {
         </motion.div>
 
         {/* Account Details Display Card with Continuous Subtle Glow Loop */}
-        <motion.div
-          initial={{ opacity: 0, y: 25 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: false, amount: 0.1 }}
-          animate={{ 
-            boxShadow: ["0px 0px 0px rgba(141,210,219,0)", "0px 4px 25px rgba(141,210,219,0.05)", "0px 0px 0px rgba(141,210,219,0)"],
-            borderColor: ["rgba(141,210,219,0.15)", "rgba(68,182,197,0.35)", "rgba(141,210,219,0.15)"]
-          }}
-          transition={{ 
-            initial: { duration: 0.8 },
-            boxShadow: { duration: 6, repeat: Infinity, ease: "easeInOut" },
-            borderColor: { duration: 5, repeat: Infinity, ease: "easeInOut" }
-          }}
-          className="bg-[#44B6C5]/5 border p-8 md:p-10 rounded-3xl backdrop-blur-md max-w-xl mx-auto text-center space-y-6 relative overflow-hidden"
-        >
+       <motion.div
+  initial={{ opacity: 0, y: 25 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: false, amount: 0.1 }}
+  transition={{
+    duration: 0.8
+  }}
+  className="bg-[#44B6C5]/5 border border-[#8DD2DB]/20 p-8 md:p-10 rounded-3xl backdrop-blur-md max-w-xl mx-auto text-center space-y-6 relative overflow-hidden"
+>
+  <motion.div
+    animate={{
+      boxShadow: [
+        "0px 0px 0px rgba(141,210,219,0)",
+        "0px 4px 25px rgba(141,210,219,0.05)",
+        "0px 0px 0px rgba(141,210,219,0)"
+      ]
+    }}
+    transition={{
+      duration: 6,
+      repeat: Infinity,
+      ease: "easeInOut"
+    }}
+    className="absolute inset-0 rounded-3xl pointer-events-none"
+  />
           {/* Internal content grid alignment */}
           <div className="space-y-4">
             <div>
