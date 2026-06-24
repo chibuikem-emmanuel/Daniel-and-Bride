@@ -23,7 +23,7 @@ export default function Navbar() {
           {/* Brand Identity Branding Logo */}
           <Link href="/">
             <h1 className="text-xl md:text-2xl font-sans font-black tracking-[0.3em] text-[#FFFFFF] cursor-pointer group">
-              J <span className="text-[#FFCC47] font-serif font-light transition-transform inline-block group-hover:scale-110 duration-300">&</span> D
+              D <span className="text-[#FFCC47] font-serif font-light transition-transform inline-block group-hover:scale-110 duration-300">&</span> R
             </h1>
           </Link>
 
