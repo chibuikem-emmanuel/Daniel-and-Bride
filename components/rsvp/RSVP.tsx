@@ -44,19 +44,27 @@ export default function RSVP() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           
           {/* Main RSVP Form Container */}
-          <motion.form 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false, amount: 0.1 }}
-            animate={{ 
-              boxShadow: ["0px 0px 0px rgba(68,182,197,0)", "0px 4px 30px rgba(68,182,197,0.05)", "0px 0px 0px rgba(68,182,197,0)"]
-            }}
-            transition={{ 
-              initial: { duration: 0.8 },
-              boxShadow: { duration: 5, repeat: Infinity, ease: "easeInOut" }
-            }}
-            className="lg:col-span-7 bg-[#44B6C5]/5 border border-[#8DD2DB]/20 p-8 md:p-10 space-y-6 rounded-3xl backdrop-blur-md relative"
-          >
+        <motion.form
+  initial={{ opacity: 0, y: 20 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: false, amount: 0.1 }}
+  animate={{
+    boxShadow: [
+      "0px 0px 0px rgba(68,182,197,0)",
+      "0px 4px 30px rgba(68,182,197,0.05)",
+      "0px 0px 0px rgba(68,182,197,0)",
+    ],
+  }}
+  transition={{
+    duration: 0.8,
+    boxShadow: {
+      duration: 5,
+      repeat: Infinity,
+      ease: "easeInOut",
+    },
+  }}
+  className="lg:col-span-7 bg-[#44B6C5]/5 border border-[#8DD2DB]/20 p-8 md:p-10 space-y-6 rounded-3xl backdrop-blur-md relative"
+>
             <div className="space-y-2">
               <label className="text-xs font-black uppercase tracking-widest text-[#8DD2DB]">Full Name</label>
               <input 
