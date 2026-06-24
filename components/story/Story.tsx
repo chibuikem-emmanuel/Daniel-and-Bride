@@ -94,13 +94,13 @@ export default function Story() {
           <div className="pt-6 border-t border-[#8DD2DB]/20 flex items-center justify-between">
             <div>
               <p className="text-3xl font-serif text-[#FFCC47]">
-                Joshua
+                Daniel
                 <span className="text-base text-[#8DD2DB] mx-1"> & </span>
-                Divine
+                Rejoice
               </p>
 
               <p className="text-xs uppercase tracking-widest font-black text-[#8DD2DB]/60 mt-1">
-                Lagos, Nigeria
+                Aba, Nigeria
               </p>
             </div>
 
