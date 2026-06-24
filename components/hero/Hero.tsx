@@ -52,7 +52,7 @@ export default function Hero() {
           transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
           className="uppercase tracking-[0.3em] text-xs font-black text-[#FFCC47] bg-[#8DD2DB]/10 px-4 py-1.5 rounded-full"
         >
-          December 25, 2026
+          November 14, 2026
         </motion.p>
 
         {/* Continuous Floating Title Loop */}
