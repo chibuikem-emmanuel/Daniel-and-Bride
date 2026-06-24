@@ -41,7 +41,7 @@ export default function Hero() {
       {/* Optimized Background Image (Reduced Gradient Blockers) */}
       <div 
         className="absolute inset-0 bg-cover bg-center opacity-40 mix-blend-normal"
-        style={{ backgroundImage: "url('https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=2070&auto=format&fit=crop')" }}
+        style={{ backgroundImage: "url('Image1 (1).jpeg')" }}
       />
       {/* Light subtle protective layer only to guarantee high text readability */}
       <div className="absolute inset-0 z-10 bg-gradient-to-b from-[#0E1719]/30 via-transparent to-[#0E1719]/50" />
