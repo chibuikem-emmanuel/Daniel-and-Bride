@@ -61,7 +61,7 @@ export default function Hero() {
           transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
           className="text-5xl md:text-7xl lg:text-8xl font-sans font-black tracking-tight text-[#FFFFFF] mt-6 leading-none"
         >
-          Joshua <span className="text-[#FFCC47]">&</span> Divine
+          Daniel <span className="text-[#FFCC47]">&</span> Rejoice
         </motion.h1>
 
         {/* Continuous Soft Breathing Text Loop */}
