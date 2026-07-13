@@ -30,7 +30,7 @@ export default function Footer() {
             className="text-center md:text-left space-y-1"
           >
             <h2 className="text-3xl font-sans font-black tracking-tight text-[#FFFFFF]">
-              Joshua <span className="text-[#FFCC47] font-serif font-light">&</span> Divine
+              Daniel <span className="text-[#FFCC47] font-serif font-light">&</span> Rejoice
             </h2>
             <motion.p 
               animate={{ letterSpacing: ["0.35em", "0.4em", "0.35em"] }}
@@ -50,7 +50,7 @@ export default function Footer() {
         {/* Bottom Credits & Copyright Bar */}
         <div className="pt-10 flex flex-col md:flex-row items-center justify-between text-[10px] tracking-[0.25em] text-[#8DD2DB]/40 font-sans font-bold gap-4">
           <p className="uppercase">
-            © {new Date().getFullYear()} JOSHUA & DIVINE. ALL RIGHTS RESERVED.
+            © {new Date().getFullYear()} DANIEL & REJOICE. ALL RIGHTS RESERVED.
           </p>
           
           <motion.p 

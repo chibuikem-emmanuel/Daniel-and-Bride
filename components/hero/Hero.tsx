@@ -41,7 +41,7 @@ export default function Hero() {
       {/* Optimized Background Image (Reduced Gradient Blockers) */}
       <div 
         className="absolute inset-0 bg-cover bg-center opacity-40 mix-blend-normal"
-        style={{ backgroundImage: "url('https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=2070&auto=format&fit=crop')" }}
+        style={{ backgroundImage: "url('Image1 (6).jpeg')" }}
       />
       {/* Light subtle protective layer only to guarantee high text readability */}
       <div className="absolute inset-0 z-10 bg-gradient-to-b from-[#0E1719]/30 via-transparent to-[#0E1719]/50" />
@@ -52,7 +52,7 @@ export default function Hero() {
           transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
           className="uppercase tracking-[0.3em] text-xs font-black text-[#FFCC47] bg-[#8DD2DB]/10 px-4 py-1.5 rounded-full"
         >
-          December 25, 2026
+          November 14, 2026
         </motion.p>
 
         {/* Continuous Floating Title Loop */}
@@ -61,7 +61,7 @@ export default function Hero() {
           transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
           className="text-5xl md:text-7xl lg:text-8xl font-sans font-black tracking-tight text-[#FFFFFF] mt-6 leading-none"
         >
-          Joshua <span className="text-[#FFCC47]">&</span> Divine
+          Dan's<span className="text-[#FFCC47]">joy</span>
         </motion.h1>
 
         {/* Continuous Soft Breathing Text Loop */}

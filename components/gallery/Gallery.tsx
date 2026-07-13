@@ -5,25 +5,25 @@ import { motion, useScroll, useTransform } from "framer-motion";
 
 const captures = [
   {
-    url: "https://images.unsplash.com/photo-1529636798458-92182e662485?q=80&w=1974&auto=format&fit=crop",
+    url: "Image1 (3).jpeg",
     aspect: "aspect-[3/4]", 
     offset: "lg:mt-0",
     speedFactor: 0.05, 
   },
   {
-    url: "https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=2070&auto=format&fit=crop",
+    url: "Image1 (5).jpeg",
     aspect: "aspect-[4/3]", 
     offset: "lg:mt-32", 
     speedFactor: -0.05, 
   },
   {
-    url: "https://images.unsplash.com/photo-1520854221256-17451cc331bf?q=80&w=1974&auto=format&fit=crop",
+    url: "Image1 (2).jpeg",
     aspect: "aspect-[1.1/1]", 
     offset: "lg:-mt-12", 
     speedFactor: 0.08, 
   },
   {
-    url: "https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?q=80&w=1974&auto=format&fit=crop",
+    url: "Image1 (1).jpeg",
     aspect: "aspect-[3/4]", 
     offset: "lg:mt-16", 
     speedFactor: -0.08, 

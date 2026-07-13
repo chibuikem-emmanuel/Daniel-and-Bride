@@ -1,15 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { MapPin, Calendar, Hotel, Users } from "lucide-react";
-import api from "@/lib/api";
-
-import { useRouter } from "next/navigation";
-
-
-
-
-
+import { motion } from "framer-motion";
+import { MapPin, Calendar, Hotel, Users, CheckCircle } from "lucide-react";
 
 export default function RSVP() {
 
@@ -29,39 +22,9 @@ const attendance = formData.attendance;
     const element = document.getElementById(id);
 
     if (element) {
-      element.scrollIntoView({
-        behavior: "smooth",
-      });
+      element.scrollIntoView({ behavior: "smooth" });
     }
   };
-
-
-
-  const handleSubmit = async (
-  e: React.FormEvent<HTMLFormElement>
-) => {
-  e.preventDefault();
-
-  try {
-    const response = await api.post("/rsvp/submit/", formData);
-
-    console.log(response.data);
-
-    router.push("/rsvp-success");
-
-    setFormData({
-      full_name: "",
-      email: "",
-      attendance: "",
-      guest_count: 1,
-    });
-
-  } catch (error) {
-    console.error(error);
-
-    alert("Something went wrong.");
-  }
-};
 
   return (
     <section
@@ -81,48 +44,46 @@ const attendance = formData.attendance;
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-          {/* RSVP Form */}
-          <form
-           onSubmit={handleSubmit}
-            className="lg:col-span-7 bg-[#44B6C5]/5 border border-[#8DD2DB]/20 p-8 md:p-10 space-y-6 rounded-3xl backdrop-blur-md"
-          >
+          
+          {/* Main RSVP Form Container */}
+        <motion.form
+  initial={{ opacity: 0, y: 20 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: false, amount: 0.1 }}
+  animate={{
+    boxShadow: [
+      "0px 0px 0px rgba(68,182,197,0)",
+      "0px 4px 30px rgba(68,182,197,0.05)",
+      "0px 0px 0px rgba(68,182,197,0)",
+    ],
+  }}
+  transition={{
+    duration: 0.8,
+    boxShadow: {
+      duration: 5,
+      repeat: Infinity,
+      ease: "easeInOut",
+    },
+  }}
+  className="lg:col-span-7 bg-[#44B6C5]/5 border border-[#8DD2DB]/20 p-8 md:p-10 space-y-6 rounded-3xl backdrop-blur-md relative"
+>
             <div className="space-y-2">
-              <label className="text-xs font-black uppercase tracking-widest text-[#8DD2DB]">
-                Full Name
-              </label>
-
-           <input
-                  type="text"
-                  required
-                  value={formData.full_name}
-                  onChange={(e) =>
-                    setFormData({
-                      ...formData,
-                      full_name: e.target.value,
-                    })
-                  }
-                  placeholder="e.g. Uzoma Nwachukwu"
-                  className="w-full bg-[#0E1719] border border-[#8DD2DB]/20 p-4 outline-none text-sm text-white rounded-xl"
-                />
+              <label className="text-xs font-black uppercase tracking-widest text-[#8DD2DB]">Full Name</label>
+              <input 
+                type="text" 
+                required
+                className="w-full bg-[#0E1719] border border-[#8DD2DB]/20 p-4 outline-none text-sm text-[#FFFFFF] focus:border-[#44B6C5] focus:ring-1 focus:ring-[#44B6C5] transition-all rounded-xl" 
+                placeholder="e.g. Uzoma Nwachukwu" 
+              />
             </div>
 
             <div className="space-y-2">
-              <label className="text-xs font-black uppercase tracking-widest text-[#8DD2DB]">
-                Email Address
-              </label>
-
-            <input
-                type="email"
+              <label className="text-xs font-black uppercase tracking-widest text-[#8DD2DB]">Email Address</label>
+              <input 
+                type="email" 
                 required
-                value={formData.email}
-                onChange={(e) =>
-                  setFormData({
-                    ...formData,
-                    email: e.target.value,
-                  })
-                }
-                placeholder="e.g. john@gmail.com"
-                className="w-full bg-[#0E1719] border border-[#8DD2DB]/20 p-4 outline-none text-sm text-white rounded-xl"
+                className="w-full bg-[#0E1719] border border-[#8DD2DB]/20 p-4 outline-none text-sm text-[#FFFFFF] focus:border-[#44B6C5] focus:ring-1 focus:ring-[#44B6C5] transition-all rounded-xl" 
+                placeholder="e.g. uzoma@domain.com" 
               />
             </div>
 
@@ -163,23 +124,22 @@ const attendance = formData.attendance;
               </div>
             </div>
 
-            {/* Guest Count */}
-            {formData.attendance === "yes" && (
-              <div className="space-y-2">
+            {/* Dynamic Guest Count Input Configuration */}
+            {attendance === "yes" && (
+              <motion.div 
+                initial={{ opacity: 0, height: 0 }}
+                animate={{ opacity: 1, height: "auto" }}
+                className="space-y-2 overflow-hidden"
+              >
                 <label className="text-xs font-black uppercase tracking-widest text-[#8DD2DB] flex items-center gap-2">
                   <Users size={14} />
                   Specify Guest Count (Including Yourself)
                 </label>
 
                 <div className="relative">
-                  <select
-                  value={formData.guest_count}
-                    onChange={(e) =>
-                      setFormData({
-                        ...formData,
-                        guest_count: Number(e.target.value),
-                      })
-                    }
+                  <select 
+                    value={guestCount}
+                    onChange={(e) => setGuestCount(e.target.value)}
                     className="w-full bg-[#0E1719] border border-[#8DD2DB]/20 p-4 outline-none text-sm text-[#FFFFFF] focus:border-[#44B6C5] focus:ring-1 focus:ring-[#44B6C5] transition-all rounded-xl appearance-none cursor-pointer"
                   >
                     <option value="1">1 Person</option>
