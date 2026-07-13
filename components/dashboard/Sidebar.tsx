@@ -66,7 +66,7 @@ export default function Sidebar() {
           </h1>
 
           <p className="text-xs text-[#8DD2DB] mt-1">
-            Joshua & Divine
+            Dan & Rejoice
           </p>
 
         </div>
