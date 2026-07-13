@@ -2,10 +2,28 @@
 
 import { useState } from "react";
 import { MapPin, Calendar, Hotel, Users } from "lucide-react";
+import api from "@/lib/api";
+
+import { useRouter } from "next/navigation";
+
+
+
+
+
 
 export default function RSVP() {
-  const [attendance, setAttendance] = useState("");
-  const [guestCount, setGuestCount] = useState("1");
+
+  const router = useRouter();
+
+
+ const [formData, setFormData] = useState({
+  full_name: "",
+  email: "",
+  attendance: "",
+  guest_count: 1,
+});
+
+const attendance = formData.attendance;
 
   const handleQuickScroll = (id: string) => {
     const element = document.getElementById(id);
@@ -16,6 +34,34 @@ export default function RSVP() {
       });
     }
   };
+
+
+
+  const handleSubmit = async (
+  e: React.FormEvent<HTMLFormElement>
+) => {
+  e.preventDefault();
+
+  try {
+    const response = await api.post("/rsvp/submit/", formData);
+
+    console.log(response.data);
+
+    router.push("/rsvp-success");
+
+    setFormData({
+      full_name: "",
+      email: "",
+      attendance: "",
+      guest_count: 1,
+    });
+
+  } catch (error) {
+    console.error(error);
+
+    alert("Something went wrong.");
+  }
+};
 
   return (
     <section
@@ -37,6 +83,7 @@ export default function RSVP() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           {/* RSVP Form */}
           <form
+           onSubmit={handleSubmit}
             className="lg:col-span-7 bg-[#44B6C5]/5 border border-[#8DD2DB]/20 p-8 md:p-10 space-y-6 rounded-3xl backdrop-blur-md"
           >
             <div className="space-y-2">
@@ -44,12 +91,19 @@ export default function RSVP() {
                 Full Name
               </label>
 
-              <input
-                type="text"
-                required
-                placeholder="e.g. Uzoma Nwachukwu"
-                className="w-full bg-[#0E1719] border border-[#8DD2DB]/20 p-4 outline-none text-sm text-[#FFFFFF] focus:border-[#44B6C5] focus:ring-1 focus:ring-[#44B6C5] transition-all rounded-xl"
-              />
+           <input
+                  type="text"
+                  required
+                  value={formData.full_name}
+                  onChange={(e) =>
+                    setFormData({
+                      ...formData,
+                      full_name: e.target.value,
+                    })
+                  }
+                  placeholder="e.g. Uzoma Nwachukwu"
+                  className="w-full bg-[#0E1719] border border-[#8DD2DB]/20 p-4 outline-none text-sm text-white rounded-xl"
+                />
             </div>
 
             <div className="space-y-2">
@@ -57,11 +111,18 @@ export default function RSVP() {
                 Email Address
               </label>
 
-              <input
+            <input
                 type="email"
                 required
-                placeholder="e.g. uzoma@domain.com"
-                className="w-full bg-[#0E1719] border border-[#8DD2DB]/20 p-4 outline-none text-sm text-[#FFFFFF] focus:border-[#44B6C5] focus:ring-1 focus:ring-[#44B6C5] transition-all rounded-xl"
+                value={formData.email}
+                onChange={(e) =>
+                  setFormData({
+                    ...formData,
+                    email: e.target.value,
+                  })
+                }
+                placeholder="e.g. john@gmail.com"
+                className="w-full bg-[#0E1719] border border-[#8DD2DB]/20 p-4 outline-none text-sm text-white rounded-xl"
               />
             </div>
 
@@ -74,8 +135,13 @@ export default function RSVP() {
               <div className="relative">
                 <select
                   required
-                  value={attendance}
-                  onChange={(e) => setAttendance(e.target.value)}
+                 value={formData.attendance}
+                  onChange={(e) =>
+                    setFormData({
+                      ...formData,
+                      attendance: e.target.value,
+                    })
+                  }
                   className="w-full bg-[#0E1719] border border-[#8DD2DB]/20 p-4 outline-none text-sm text-[#FFFFFF] focus:border-[#44B6C5] focus:ring-1 focus:ring-[#44B6C5] transition-all rounded-xl appearance-none cursor-pointer"
                 >
                   <option value="">
@@ -98,7 +164,7 @@ export default function RSVP() {
             </div>
 
             {/* Guest Count */}
-            {attendance === "yes" && (
+            {formData.attendance === "yes" && (
               <div className="space-y-2">
                 <label className="text-xs font-black uppercase tracking-widest text-[#8DD2DB] flex items-center gap-2">
                   <Users size={14} />
@@ -107,8 +173,13 @@ export default function RSVP() {
 
                 <div className="relative">
                   <select
-                    value={guestCount}
-                    onChange={(e) => setGuestCount(e.target.value)}
+                  value={formData.guest_count}
+                    onChange={(e) =>
+                      setFormData({
+                        ...formData,
+                        guest_count: Number(e.target.value),
+                      })
+                    }
                     className="w-full bg-[#0E1719] border border-[#8DD2DB]/20 p-4 outline-none text-sm text-[#FFFFFF] focus:border-[#44B6C5] focus:ring-1 focus:ring-[#44B6C5] transition-all rounded-xl appearance-none cursor-pointer"
                   >
                     <option value="1">1 Person</option>
