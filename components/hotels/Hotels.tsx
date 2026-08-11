@@ -30,19 +30,19 @@ export default function Hotels() {
   return (
     <section
       id="hotels"
-      className="py-24 bg-[#0E1719] px-6 relative overflow-hidden border-b border-[#8DD2DB]/10"
+      className="py-24 bg-[#F5F0EB] px-6 relative overflow-hidden border-b border-[#C2A675]/25"
     >
       <motion.div
         animate={{
-          rotate: [0, 360],
-          scale: [1, 1.1, 1],
+          scale: [1, 1.15, 1],
+          opacity: [0.12, 0.22, 0.12],
         }}
         transition={{
-          duration: 25,
+          duration: 18,
           repeat: Infinity,
-          ease: "linear",
+          ease: "easeInOut",
         }}
-        className="absolute top-[-20%] left-[25%] w-[50%] h-[50%] rounded-full bg-[#44B6C5]/5 blur-[140px] pointer-events-none"
+        className="absolute top-[-10%] left-[25%] w-[50%] h-[50%] rounded-full bg-[#D4B2A7] blur-[140px] pointer-events-none"
       />
 
       <div className="max-w-6xl mx-auto relative z-10">
@@ -53,13 +53,13 @@ export default function Hotels() {
             repeat: Infinity,
             ease: "easeInOut",
           }}
-          className="text-center mb-16 space-y-2"
+          className="text-center mb-16 flex flex-col items-center space-y-2"
         >
-          <span className="text-xs font-black uppercase tracking-wider text-[#FFCC47] bg-[#8DD2DB]/10 px-4 py-1.5 rounded-full">
+          <span className="text-xs font-semibold uppercase tracking-[0.25em] text-[#404734] bg-[#404734]/10 border border-[#404734]/20 px-4 py-1.5 rounded-full">
             Nearby Accommodations
           </span>
 
-          <h2 className="text-3xl md:text-4xl font-black tracking-tight text-white mt-4">
+          <h2 className="text-3xl md:text-5xl font-serif italic text-[#4A121A] tracking-tight mt-4">
             Where to Stay
           </h2>
         </motion.div>
@@ -78,10 +78,10 @@ export default function Hotels() {
               animate={{
                 y: [0, -4, 0],
               }}
-              className="bg-[#44B6C5]/5 border border-[#8DD2DB]/15 rounded-3xl flex flex-col justify-between group hover:border-[#44B6C5]/40 hover:bg-[#44B6C5]/10 transition-all duration-500 backdrop-blur-sm overflow-hidden p-3"
+              className="bg-[#EFE8DF] border border-[#C2A675]/35 rounded-3xl flex flex-col justify-between group hover:border-[#C2A675]/60 transition-all duration-500 backdrop-blur-sm overflow-hidden p-3 shadow-sm hover:shadow-md"
             >
               <div>
-                <div className="w-full aspect-[16/10] rounded-2xl overflow-hidden relative mb-5 bg-[#0E1719] border border-[#8DD2DB]/10">
+                <div className="w-full aspect-[16/10] rounded-2xl overflow-hidden relative mb-5 bg-[#F5F0EB] border border-[#C2A675]/20">
                   <motion.img
                     src={h.url}
                     alt={h.title}
@@ -93,25 +93,24 @@ export default function Hotels() {
                       repeat: Infinity,
                       ease: "easeInOut",
                     }}
-                    className="w-full h-full object-cover opacity-85 group-hover:opacity-100 transition-opacity duration-500"
+                    className="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-opacity duration-500"
                   />
-
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0E1719]/50 via-transparent to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#4A121A]/30 via-transparent to-transparent" />
                 </div>
 
                 <div className="px-3 space-y-2.5">
-                  <h3 className="text-xl font-black text-white group-hover:text-[#FFCC47] transition-colors duration-300">
+                  <h3 className="text-xl font-serif italic text-[#4A121A]">
                     {h.title}
                   </h3>
 
-                  <p className="text-sm text-[#8DD2DB]/80 leading-relaxed">
+                  <p className="text-xs text-[#404734]/80 leading-relaxed font-sans">
                     {h.desc}
                   </p>
                 </div>
               </div>
 
-              <div className="mt-8 pt-5 border-t border-[#8DD2DB]/10 px-3 pb-2">
-                <span className="text-xl font-black text-[#FFCC47] block text-center mb-4">
+              <div className="mt-8 pt-5 border-t border-[#C2A675]/30 px-3 pb-2">
+                <span className="text-lg font-serif italic text-[#4A121A] block text-center mb-4">
                   {h.fee}
                 </span>
 
@@ -119,7 +118,7 @@ export default function Hotels() {
                   href={h.link}
                   target="_blank"
                   rel="noreferrer"
-                  className="block w-full text-center bg-[#8DD2DB]/10 text-[#8DD2DB] border border-[#8DD2DB]/20 py-3 rounded-xl text-xs uppercase tracking-widest font-black hover:bg-[#FFCC47] hover:text-[#0E1719] hover:border-[#FFCC47] transition-all duration-300"
+                  className="block w-full text-center bg-[#4A121A] text-[#F5F0EB] hover:bg-[#404734] py-3 rounded-full text-xs uppercase tracking-[0.2em] font-semibold transition-colors duration-300 shadow-sm"
                 >
                   View Details
                 </a>

@@ -5,24 +5,27 @@ import { motion } from "framer-motion";
 const track = [
   {
     epoch: "Part I",
-    name: "The Wedding Ceremony",
-    hr: "10:00 AM",
+    name: "Traditional Marriage",
+    hr: "3:00 PM",
+    date: "Saturday, October 30, 2026",
     detail:
-      "The arrival of guests followed by our exchange of vows, rings, and beautiful spiritual celebrations.",
+      "Cultural rites, family introductions, and traditional festivities at No. 4 Ubani Ukoma Close, Ogborhill, Aba.",
   },
   {
     epoch: "Part II",
-    name: "The Reception Feast",
-    hr: "01:00 PM",
+    name: "Church Solemnization",
+    hr: "10:00 AM",
+    date: "Saturday, November 14, 2026",
     detail:
-      "A premium culinary experience paired with traditional cultural honors, speeches, and the cutting of the cake.",
+      "The holy solemnization of matrimony and exchange of vows at Rhema University Auditorium, Aba.",
   },
   {
     epoch: "Part III",
-    name: "The After Party",
-    hr: "07:00 PM",
+    name: "Wedding Reception",
+    hr: "Following Ceremony",
+    date: "Saturday, November 14, 2026",
     detail:
-      "Atmospheric lighting shifts, live music arrangements, and an infinite dance sequence to crown the night.",
+      "A grand celebratory feast, cutting of the cake, cultural displays, and dancing at the same venue.",
   },
 ];
 
@@ -30,7 +33,7 @@ export default function Timeline() {
   return (
     <section
       id="timeline"
-      className="py-24 bg-[#0E1719] px-6 relative overflow-hidden border-b border-[#8DD2DB]/10"
+      className="py-24 bg-[#F5F0EB] px-6 relative overflow-hidden border-b border-[#C2A675]/25"
     >
       {/* Background ambient continuous fluid blur layer */}
       <motion.div
@@ -44,7 +47,7 @@ export default function Timeline() {
           repeat: Infinity,
           ease: "easeInOut",
         }}
-        className="absolute top-[30%] left-[-10%] w-[45%] h-[45%] rounded-full bg-[#44B6C5]/5 filter blur-[130px] pointer-events-none"
+        className="absolute top-[30%] left-[-10%] w-[45%] h-[45%] rounded-full bg-[#D4B2A7]/20 filter blur-[130px] pointer-events-none"
       />
 
       <div className="max-w-4xl mx-auto relative z-10">
@@ -56,14 +59,14 @@ export default function Timeline() {
             repeat: Infinity,
             ease: "easeInOut",
           }}
-          className="text-center mb-16 space-y-2"
+          className="text-center mb-16 space-y-2 flex flex-col items-center"
         >
-          <span className="text-xs font-black uppercase tracking-wider text-[#FFCC47] bg-[#8DD2DB]/10 px-4 py-1.5 rounded-full">
+          <span className="text-xs font-semibold uppercase tracking-[0.25em] text-[#404734] bg-[#404734]/10 border border-[#404734]/20 px-4 py-1.5 rounded-full">
             The Order of Events
           </span>
 
-          <h2 className="text-3xl md:text-4xl font-sans font-black tracking-tight text-[#FFFFFF] mt-4">
-            Wedding Timeline
+          <h2 className="text-3xl md:text-5xl font-serif italic text-[#4A121A] mt-4 tracking-tight">
+            Order of Events
           </h2>
         </motion.div>
 
@@ -77,9 +80,9 @@ export default function Timeline() {
               viewport={{ once: false, amount: 0.1 }}
               animate={{
                 boxShadow: [
-                  "0px 0px 0px rgba(141,210,219,0)",
-                  "0px 4px 20px rgba(141,210,219,0.03)",
-                  "0px 0px 0px rgba(141,210,219,0)",
+                  "0px 0px 0px rgba(194,166,117,0)",
+                  "0px 6px 20px rgba(194,166,117,0.12)",
+                  "0px 0px 0px rgba(194,166,117,0)",
                 ],
               }}
               transition={{
@@ -92,18 +95,24 @@ export default function Timeline() {
                   delay: i * 0.2,
                 },
               }}
-              className="border border-[#8DD2DB]/20 bg-[#44B6C5]/5 p-6 md:p-8 rounded-2xl flex flex-col md:flex-row md:items-center justify-between gap-6 hover:border-[#44B6C5]/60 hover:bg-[#44B6C5]/10 transition-all duration-300 group"
+              className="border border-[#C2A675]/35 bg-[#EFE8DF] p-6 md:p-8 rounded-2xl flex flex-col md:flex-row md:items-center justify-between gap-6 hover:border-[#4A121A]/50 hover:bg-[#F5F0EB] transition-all duration-300 group shadow-sm"
             >
               <div className="space-y-1">
-                <span className="text-xs font-black text-[#FFCC47] tracking-widest uppercase">
-                  {evt.epoch}
-                </span>
+                <div className="flex items-center gap-2">
+                  <span className="text-xs font-semibold text-[#C2A675] tracking-[0.2em] uppercase">
+                    {evt.epoch}
+                  </span>
+                  <span className="text-xs text-[#404734]/60">•</span>
+                  <span className="text-xs font-medium text-[#404734]/80">
+                    {evt.date}
+                  </span>
+                </div>
 
-                <h3 className="text-xl md:text-2xl font-sans font-black text-[#FFFFFF] group-hover:text-[#FFCC47] transition-colors duration-300">
+                <h3 className="text-xl md:text-2xl font-serif italic text-[#4A121A] group-hover:text-[#404734] transition-colors duration-300">
                   {evt.name}
                 </h3>
 
-                <p className="text-sm md:text-base text-[#8DD2DB] font-medium leading-relaxed max-w-xl pt-1">
+                <p className="text-sm md:text-base text-[#404734]/80 font-sans leading-relaxed max-w-xl pt-1">
                   {evt.detail}
                 </p>
               </div>
@@ -117,7 +126,7 @@ export default function Timeline() {
                   ease: "easeInOut",
                   delay: i * 0.3,
                 }}
-                className="bg-[#FFCC47] text-[#0E1719] px-6 py-3 rounded-xl font-sans font-black text-sm tracking-wide whitespace-nowrap self-start md:self-auto shadow-md group-hover:bg-[#44B6C5] group-hover:text-[#FFFFFF] transition-colors duration-300"
+                className="bg-[#404734] text-[#F5F0EB] border border-[#C2A675]/30 px-6 py-3 rounded-full font-serif italic text-sm tracking-wide whitespace-nowrap self-start md:self-auto shadow-sm group-hover:bg-[#4A121A] transition-colors duration-300"
               >
                 {evt.hr}
               </motion.div>

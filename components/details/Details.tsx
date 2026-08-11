@@ -7,8 +7,8 @@ export default function Details() {
   const cards = [
     {
       icon: Calendar,
-      title: "Date",
-      val: "December 25, 2026",
+      title: "Church Ceremony",
+      val: "Saturday, Nov 14, 2026",
     },
     {
       icon: Clock,
@@ -25,22 +25,24 @@ export default function Details() {
   return (
     <section
       id="details"
-      className="py-24 bg-[#0E1719] px-6 relative overflow-hidden border-b border-[#8DD2DB]/10"
+      className="py-24 bg-[#F5F0EB] px-6 relative overflow-hidden border-b border-[#C2A675]/25"
     >
+      {/* Soft Dusty Rose Background Ambient Glow */}
       <motion.div
         animate={{
           scale: [1, 1.15, 1],
-          opacity: [0.03, 0.06, 0.03],
+          opacity: [0.1, 0.2, 0.1],
         }}
         transition={{
           duration: 12,
           repeat: Infinity,
           ease: "easeInOut",
         }}
-        className="absolute top-[-10%] right-[10%] w-[45%] h-[45%] rounded-full bg-[#44B6C5] blur-[140px] pointer-events-none"
+        className="absolute top-[-10%] right-[10%] w-[45%] h-[45%] rounded-full bg-[#D4B2A7] blur-[140px] pointer-events-none"
       />
 
       <div className="max-w-6xl mx-auto relative z-10">
+        {/* Section Header */}
         <motion.div
           animate={{ y: [0, -4, 0] }}
           transition={{
@@ -50,15 +52,16 @@ export default function Details() {
           }}
           className="text-center max-w-2xl mx-auto mb-16"
         >
-          <span className="text-xs font-black uppercase tracking-wider text-[#FFCC47] bg-[#8DD2DB]/10 px-4 py-1.5 rounded-full">
+          <span className="text-xs font-semibold uppercase tracking-[0.25em] text-[#404734] bg-[#404734]/10 border border-[#404734]/20 px-4 py-1.5 rounded-full">
             The Celebration
           </span>
 
-          <h2 className="text-3xl md:text-4xl font-black text-white mt-4">
+          <h2 className="text-3xl md:text-5xl font-serif italic text-[#4A121A] mt-4 tracking-tight">
             When & Where
           </h2>
         </motion.div>
 
+        {/* Cards Grid */}
         <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
           {cards.map((card, idx) => {
             const Icon = card.icon;
@@ -76,8 +79,9 @@ export default function Details() {
                 whileHover={{
                   y: -5,
                 }}
-                className="bg-[#44B6C5]/5 border border-[#8DD2DB]/20 p-8 rounded-2xl flex flex-col items-center text-center group hover:bg-[#44B6C5]/10 hover:border-[#44B6C5]/50 transition-all duration-300 backdrop-blur-sm"
+                className="bg-[#EFE8DF] border border-[#C2A675]/35 p-8 rounded-2xl flex flex-col items-center text-center group hover:bg-[#F5F0EB] hover:border-[#4A121A]/40 transition-all duration-300 backdrop-blur-sm shadow-sm hover:shadow-md"
               >
+                {/* Circle Icon Container */}
                 <motion.div
                   animate={{
                     scale: [1, 1.05, 1],
@@ -87,18 +91,18 @@ export default function Details() {
                     repeat: Infinity,
                     ease: "easeInOut",
                   }}
-                  className="w-14 h-14 rounded-full bg-[#0E1719] border border-[#8DD2DB]/30 flex items-center justify-center mb-5 text-[#FFCC47]"
+                  className="w-14 h-14 rounded-full bg-[#404734]/10 border border-[#C2A675]/40 flex items-center justify-center mb-5 text-[#4A121A] group-hover:bg-[#4A121A] group-hover:text-[#F5F0EB] transition-colors duration-300"
                 >
-                  <Icon size={22} strokeWidth={2} />
+                  <Icon size={22} strokeWidth={1.75} />
                 </motion.div>
 
-                <h3 className="text-xs tracking-widest font-black text-[#8DD2DB] uppercase">
+                <h3 className="text-[11px] tracking-[0.25em] font-semibold text-[#404734] uppercase">
                   {card.title}
                 </h3>
 
-                <span className="w-6 h-[2px] bg-[#8DD2DB]/20 my-4 rounded-full" />
+                <span className="w-8 h-[1px] bg-[#C2A675]/40 my-4 rounded-full group-hover:bg-[#4A121A]/30 transition-colors duration-300" />
 
-                <p className="text-white font-bold text-base md:text-lg">
+                <p className="text-[#404734] font-serif italic text-lg md:text-xl leading-snug">
                   {card.val}
                 </p>
               </motion.div>

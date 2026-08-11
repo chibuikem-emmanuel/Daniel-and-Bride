@@ -11,12 +11,14 @@ import WeddingMap from "@/components/map/WeddingMap";
 import Footer from "@/components/footer/Footer";
 import Countdown from "@/components/countdown/Countdown";
 import Hotels from "@/components/hotels/Hotels";
+import Toast from "@/components/toast/Toast";
 
 export default function Home() {
   return (
     <main>
       <Navbar />
       <Hero />
+      <Toast />
       <Countdown />
       <Story />
       <Details />

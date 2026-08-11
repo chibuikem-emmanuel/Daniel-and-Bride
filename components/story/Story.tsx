@@ -6,8 +6,9 @@ export default function Story() {
   return (
     <section
       id="story"
-      className="relative py-24 md:py-32 bg-[#0E1719] px-6 overflow-hidden border-b border-[#8DD2DB]/10"
+      className="relative py-24 md:py-32 bg-[#F5F0EB] px-6 overflow-hidden border-b border-[#C2A675]/25"
     >
+      {/* Background Soft Glow */}
       <motion.div
         animate={{
           y: [0, 40, 0],
@@ -19,10 +20,11 @@ export default function Story() {
           repeat: Infinity,
           ease: "easeInOut",
         }}
-        className="absolute top-[20%] right-[-5%] w-[40%] h-[40%] rounded-full bg-[#44B6C5]/5 blur-[120px] pointer-events-none"
+        className="absolute top-[20%] right-[-5%] w-[40%] h-[40%] rounded-full bg-[#D4B2A7]/20 blur-[120px] pointer-events-none"
       />
 
       <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+        {/* Left Side: Editorial Image Card */}
         <motion.div
           initial={{ opacity: 0, x: -30 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -39,17 +41,18 @@ export default function Story() {
           }}
           className="lg:col-span-5 relative"
         >
-          <div className="absolute -inset-3 border border-[#44B6C5]/20 rounded-3xl pointer-events-none" />
+          <div className="absolute -inset-3 border border-[#C2A675]/30 rounded-3xl pointer-events-none" />
 
-          <div className="relative overflow-hidden aspect-[4/5] bg-[#0E1719]/40 border border-[#8DD2DB]/30 p-2 rounded-2xl shadow-xl">
+          <div className="relative overflow-hidden aspect-[4/5] bg-[#EFE8DF] border border-[#C2A675]/40 p-2.5 rounded-2xl shadow-xl">
             <img
               src="Image1 (4).jpeg"
-              alt="Joshua and Divine portrait"
-              className="w-full h-full object-cover opacity-90 rounded-xl transition-all duration-500 hover:scale-105"
+              alt="Daniel and Rejoice portrait"
+              className="w-full h-full object-cover rounded-xl transition-all duration-500 hover:scale-105"
             />
           </div>
         </motion.div>
 
+        {/* Right Side: Editorial Content */}
         <motion.div
           initial={{ opacity: 0, x: 30 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -68,16 +71,16 @@ export default function Story() {
           className="lg:col-span-7 flex flex-col justify-center space-y-6"
         >
           <div>
-            <span className="text-xs font-black uppercase tracking-wider text-[#FFCC47] bg-[#8DD2DB]/10 px-4 py-1.5 rounded-full">
+            <span className="text-xs font-semibold uppercase tracking-[0.25em] text-[#404734] bg-[#404734]/10 border border-[#404734]/20 px-4 py-1.5 rounded-full">
               Our Journey
             </span>
 
-            <h2 className="text-3xl md:text-4xl font-black tracking-tight text-white mt-4">
+            <h2 className="text-3xl md:text-5xl font-serif italic text-[#4A121A] tracking-tight mt-4">
               Where Love Meets Destiny
             </h2>
           </div>
 
-          <div className="space-y-4 text-[#8DD2DB] text-base leading-relaxed">
+          <div className="space-y-4 text-[#404734]/85 font-sans text-base md:text-lg leading-relaxed">
             <p>
               Our story didn’t follow a traditional path. What began as a casual
               conversation about art, design, and culture quickly turned into
@@ -91,15 +94,15 @@ export default function Story() {
             </p>
           </div>
 
-          <div className="pt-6 border-t border-[#8DD2DB]/20 flex items-center justify-between">
+          <div className="pt-6 border-t border-[#C2A675]/30 flex items-center justify-between">
             <div>
-              <p className="text-3xl font-serif text-[#FFCC47]">
+              <p className="text-2xl md:text-3xl font-serif italic text-[#4A121A]">
                 Daniel
-                <span className="text-base text-[#8DD2DB] mx-1"> & </span>
+                <span className="text-base text-[#C2A675] font-serif not-italic mx-1.5"> & </span>
                 Rejoice
               </p>
 
-              <p className="text-xs uppercase tracking-widest font-black text-[#8DD2DB]/60 mt-1">
+              <p className="text-[10px] uppercase tracking-[0.25em] font-semibold text-[#404734]/70 mt-1">
                 Aba, Nigeria
               </p>
             </div>
@@ -111,7 +114,7 @@ export default function Story() {
                 repeat: Infinity,
                 ease: "linear",
               }}
-              className="w-12 h-12 rounded-full border border-[#8DD2DB]/30 bg-[#44B6C5]/5 flex items-center justify-center text-[#FFCC47] text-lg"
+              className="w-12 h-12 rounded-full border border-[#C2A675]/40 bg-[#404734]/10 flex items-center justify-center text-[#4A121A] text-lg font-serif"
             >
               ⚭
             </motion.div>
