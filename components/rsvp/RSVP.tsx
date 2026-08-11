@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, ChangeEvent, FormEvent } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Loader2, Send, CheckCircle, AlertCircle } from "lucide-react";
 
@@ -13,19 +13,22 @@ export default function RSVPForm() {
   });
 
   const [isLoading, setIsLoading] = useState(false);
-  const [status, setStatus] = useState(null); // "success" | "error" | null
+  const [status, setStatus] = useState<"success" | "error" | null>(null);
 
-  const handleChange = (e) => {
+  // Added React.ChangeEvent type for form input/select elements
+  const handleChange = (
+    e: ChangeEvent<HTMLInputElement | HTMLSelectElement>
+  ) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = async (e) => {
+  // Added React.FormEvent type for form submission
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsLoading(true);
     setStatus(null);
 
     try {
-      // Replace with your actual backend endpoint URL
       const response = await fetch("/api/rsvp", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -39,7 +42,7 @@ export default function RSVPForm() {
     } catch (err) {
       console.error(err);
       setStatus("error");
-    } finally {
+    } fontally {
       setIsLoading(false);
     }
   };
@@ -127,7 +130,7 @@ export default function RSVPForm() {
             </div>
           </div>
 
-          {/* Submit Button with Preloader Spinner */}
+          {/* Submit Button */}
           <button
             type="submit"
             disabled={isLoading}
