@@ -97,9 +97,9 @@ export default function Story() {
           <div className="pt-6 border-t border-[#C2A675]/30 flex items-center justify-between">
             <div>
               <p className="text-2xl md:text-3xl font-serif italic text-[#4A121A]">
-                Daniel
-                <span className="text-base text-[#C2A675] font-serif not-italic mx-1.5"> & </span>
-                Rejoice
+                Dan'sJoy2026✨
+                <span className="text-base text-[#C2A675] font-serif not-italic mx-1.5"> </span>
+                
               </p>
 
               <p className="text-[10px] uppercase tracking-[0.25em] font-semibold text-[#404734]/70 mt-1">
