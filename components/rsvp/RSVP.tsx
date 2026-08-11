@@ -15,14 +15,12 @@ export default function RSVPForm() {
   const [isLoading, setIsLoading] = useState(false);
   const [status, setStatus] = useState<"success" | "error" | null>(null);
 
-  // Added React.ChangeEvent type for form input/select elements
   const handleChange = (
     e: ChangeEvent<HTMLInputElement | HTMLSelectElement>
   ) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  // Added React.FormEvent type for form submission
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsLoading(true);
@@ -42,7 +40,7 @@ export default function RSVPForm() {
     } catch (err) {
       console.error(err);
       setStatus("error");
-    } fontally {
+    } finally {
       setIsLoading(false);
     }
   };
